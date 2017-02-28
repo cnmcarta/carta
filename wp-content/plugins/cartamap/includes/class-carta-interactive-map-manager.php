@@ -110,15 +110,17 @@ class Carta_Interactive_Map_Manager {
 		//hooks for admin dashboard
 		//see load_dependencies()
 		$admin = new Carta_Interactive_Map_Manager_Admin( $this->get_version() );
+		////////// Following Line: syntax to define admin hooks ///////////////
 		//$this->loader->add_action( 'hook', $admin, 'function in $admin' );
-		//admin page styles for this plugin
+		////////// CARTA Placemark Custom Post Type //////////////////////////
+		//register carta placemark custom post type
+		$this->loader->add_action( 'init', $admin, 'register_carta_placemark_post_type' );
+		//display custom meta boxes for carta_placemark_post_type
+		$this->loader->add_action( 'admin_init', $admin, 'display_carta_placemark_meta_fields' );
+		//admin page styles for carta placemark custom post type
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
-		//custom post type for this plugin
-		$this->loader->add_action( 'init', $admin, 'carta_placemark_post_type' );
-		//custom meta boxes for carta_placemark_post_type
-		$this->loader->add_action( 'admin_init', $admin, 'add_carta_placemark_meta_fields' );
-		
-		//$this->loader->add_action( 'add_meta_boxes', $admin, 'add_meta_box' );
+		//save carta_placemark_post_type meta data
+		$this->loader->add_action( 'save_post', $admin, 'save_carta_placemark_meta_fields' );
 	}
 	
 	/**

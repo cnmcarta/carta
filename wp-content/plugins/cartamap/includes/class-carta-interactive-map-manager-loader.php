@@ -11,7 +11,7 @@
  * coordinating all actions and filters used throughout the plugin.
  *
  * This class maintains three internal collections - one for actions, one for
- * hooks - one for shortcodes each of which are coordinated through external classes that
+ * flters - one for shortcodes each of which are coordinated through external classes that
  * register the various hooks through this class.
  *
  * @since    1.0.0

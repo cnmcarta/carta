@@ -1,8 +1,22 @@
-/* admin page meta box styles ?? pc */
-#single-post-meta-manager-data {
-	width:  100%;
+/* custom post type Carta Placemark */
+#carta_placemark_meta
+{
+	overflow: hidden;
+    padding-bottom: 1em;
+}
+#carta_placemark_meta div
+{
+	clear: both;
 }
 
-#single-post-meta-manager-data .key {
-	font-weight: bold;
+.carta_placemark_label
+{
+	display:block;
+    float: left;
+    width: 200px;
+}
+.carta_placemark_input
+{
+	padding-left:3px;
+	display:block;
 }

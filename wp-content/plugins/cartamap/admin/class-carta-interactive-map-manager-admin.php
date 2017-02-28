@@ -36,22 +36,19 @@ class Carta_Interactive_Map_Manager_Admin {
 	}
 	
 	/**
-	 * Enqueues the style sheet responsible for styling the contents of this
-	 * meta box.
+	 * Enqueues the style sheet responsible for styling this dashboard screen.
 	 */
 
 	public function enqueue_styles() {
-
 		wp_enqueue_style(
-			'single-post-meta-manager-admin',
+			'carta-placemark-meta-manager-admin',
 			plugin_dir_url( __FILE__ ) . 'css/carta-interactive-map-manager-admin.css',
 			array(),
 			$this->version,
 			FALSE
 		);
 	}
-	
-	public function carta_placemark_post_type() {
+	public function register_carta_placemark_post_type() {
 	  register_post_type( 'carta_placemark',
 		array(
 		  'labels' => array(
@@ -62,8 +59,11 @@ class Carta_Interactive_Map_Manager_Admin {
 		  'has_archive' => true,
 		)
 	  );
+	  //remove the default editor box
+	  //http://wordpress.stackexchange.com/questions/6856/
+	  remove_post_type_support( 'carta_placemark', 'editor' );
 	}	
-	public function add_carta_placemark_meta_fields() {
+	public function display_carta_placemark_meta_fields() {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
 		add_meta_box("carta_placemark_meta", "Carta Placemark Details", array($this,"render_carta_placemark_meta_options"), "carta_placemark", "normal", "default");
@@ -71,38 +71,4 @@ class Carta_Interactive_Map_Manager_Admin {
 	public function render_carta_placemark_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-placemark-meta-options.php';
 	}
-	
-	/**
-	 * Registers the meta box that will be used to display all of the post meta data
-	 * associated with the current post.
-	 */
-
-	/*
-	public function add_meta_box() {
-
-		//die('add_meta_box');
-		//activated when Add New post button is clicked
-		add_meta_box(
-			'single-post-meta-manager-admin',
-			'Single Post Meta Manager...',
-			array( $this, 'render_meta_box' ),
-			'post',
-			'normal',
-			'core'
-		);
-
-	}
-	*/
-	/**
-	 * Requires the file that is used to display the user interface of the post meta box.
-	 */
-	 /*
-	public function render_meta_box() {
-		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-interactive-map-manager.php';
-	}
-	*/
-
-	
-	
-
 }
