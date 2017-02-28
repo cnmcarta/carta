@@ -10,6 +10,8 @@
  * The Carta Interactive Map Manager Public defines all functionality for the public-facing
  * sides of the plugin.
  *
+ * This class defines the meta box used to display the post meta data and registers
+ * the style sheet responsible for styling the content of the meta box.
  *
  * @since    1.0.0
  */
