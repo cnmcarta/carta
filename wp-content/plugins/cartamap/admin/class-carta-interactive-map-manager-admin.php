@@ -71,4 +71,15 @@ class Carta_Interactive_Map_Manager_Admin {
 	public function render_carta_placemark_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-placemark-meta-options.php';
 	}
+	public function save_carta_placemark_meta_fields() {
+		global $post;
+		update_post_meta($post->ID, "carta_placemark_lat", $_POST["carta_placemark_lat"]);
+		update_post_meta($post->ID, "carta_placemark_lng", $_POST["carta_placemark_lng"]);
+		update_post_meta($post->ID, "carta_placemark_place_name_en", $_POST["carta_placemark_place_name_en"]);
+		update_post_meta($post->ID, "carta_placemark_place_name_es", $_POST["carta_placemark_place_name_es"]);
+		update_post_meta($post->ID, "carta_placemark_description_en", $_POST["carta_placemark_description_en"]);
+		update_post_meta($post->ID, "carta_placemark_description_es", $_POST["carta_placemark_description_es"]);
+	}
+	
+	
 }

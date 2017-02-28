@@ -20,3 +20,10 @@
 	padding-left:3px;
 	display:block;
 }
+fieldset.outer{
+	border:1px dotted #000;
+}
+fieldset.inner{
+	border:1px dotted #ccc;
+	margin: 3px;
+}
