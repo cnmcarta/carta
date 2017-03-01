@@ -12,8 +12,9 @@
 	<fieldset class = "outer">
 	<fieldset class ="inner">
 	<legend>Placemark Constants</legend>
-    <label class="carta_placemark_label">Latitude:</label><input class="carta_placemark_input"  name="carta_placemark_lat" value="<?php echo $lat; ?>" /><br>
-    <label class="carta_placemark_label">Longitude:</label><input class="carta_placemark_input"  name="carta_placemark_lng" value="<?php echo $lng; ?>" /><br>
+    <label class="carta_placemark_label">Latitude:</label><input class="carta_placemark_input"  name="carta_placemark_lat" type="number" value="<?php echo $lat; ?>"  step="0.0000001" min="18.00" max="40.00" required /><br>
+    <!--min="18.00" max="40.00"-->
+    <label class="carta_placemark_label">Longitude:</label><input class="carta_placemark_input"  name="carta_placemark_lng" type="number" value="<?php echo $lng; ?>"  step="0.0000001" min="-110.00" max="-95.00" required /><br>
 	</fieldset>
 	<fieldset class ="inner">
 	<legend>English Version</legend>
