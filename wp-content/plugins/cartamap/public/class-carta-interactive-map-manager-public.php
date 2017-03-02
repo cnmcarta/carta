@@ -64,6 +64,7 @@ class Carta_Interactive_Map_Manager_Public {
 		//shortcodes must return content, not produce it directly 
 		//https://codex.wordpress.org/Function_Reference/add_shortcode
 		ob_start();
+		wp_enqueue_style('carta_interactive_map_manager_public',plugin_dir_url( __FILE__ ) . 'css/style.css',array(),$this->version,FALSE);
 		require_once plugin_dir_path( __FILE__ ) . 'partials/shortcode_cartamap.php';
 		return ob_get_clean();		
 	}	
