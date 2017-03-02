@@ -5,123 +5,218 @@
 			$('#captureBox h1,p').delay(1000).animate({left: 0}, 1000);
 		});
 </script>
-<style>
-        * {
-            margin: 0;
-        }
-        body {
-            background: linear-gradient(#8aa8b7, #ffffff, #ffffff, #8aa8b7);
-        }
-      .bodyinside {
-        height: 800px;
-		margin:0;
-        }
-		
-        h1.interactivemap {
-            text-align: center;
-            color: #8e2f11 !important;
-			/*
-            font-family: 'Cormorant Unicase', serif;
-            font-size: 450%;
-            font-weight: bold;
-            text-shadow: -1px -1px 0 #000000,
-				  1px -1px 0 #000000,
-				 -1px 1px 0 #000000,
-				  3px 1px 0 #000000;
-				  */
-        }
-		/*
-        h2 {
-            text-align: center;
-            font-family: 'Norican', cursive;
-            font-size: 200%;
-            padding: 5px;
-            background-color: #c6e3fc;
-            border-bottom: 5px solid #000000;
-            border-radius: 10px;
-            box-shadow: 10px 10px 20px 0px #666;
-        }
-		*/
-      #map {
-       
-	   height: 90%;
-       width: 30%;
-	   
-       overflow: hidden;
-       float: left;
-       border: 12px outset #8e2f11;
-          border-radius: 10px;
-       box-shadow: 10px 10px 20px 0px #000000;
-       }
-      #capture {
-          background-color: #000000;
-       /*
-	   height: 50%;
-       width: 40%;
-	   */
-       height: 560px;
-       width: 480px;
-	   
-       margin-left: auto;
-          margin-right: auto;
-       overflow: hidden;
-       border: 12px outset #8e2f11;
-          border-radius: 10px;
-       box-shadow: 10px 10px 20px 0px #000000;
-	   background-size: cover;
-	   background-image: url('/wp-content/uploads/2015/11/2015-06-13-13.43.28-2.jpg');
-        }
-	   #captureBox{
-	   height:100%;
-	   width:100%;
-	   background-color: rgba(0,0,0,0.6);
-	   margin-top: 0;
-	   padding: 20px;
-	   font-family: Georgia;
-	   font-weight: bold;
-	   }
-	   
-	   #captureBox h1{
-	    margin-top: 0;
-	   }
-	   
-	   #captureBox h1, p{
-	   color: white;
-	   position:relative;
-	   top: 100px;
-	   left: 480px;
-	   text-align: center;
-	   max-width: 440px;
-	   }
-		#captureBox div div{
-			color:#000;
-			text-align:center;
-			height:175px;
-			background-color:#fff;
-			margin-top:-30px;
-		}
-		
-		
-        #thePics {
-            background-color: #782805;
-            float: right;
-            width: 20%;
-            height: auto;
-            margin-bottom: 20px;
-            border: 10px outset #8e2f11;
-            border-radius: 10px;
-            box-shadow: 10px 10px 20px 0px #000000;
-        }
-        .space {
-            margin-bottom: 10px;
-        }
-	
-		
-    </style>
+
 
     <script>
 	var map;
 	var src = 'http://carta.korwest.com/wp-content/plugins/cartamap/assets/cartamap.kml?cachebust='+(new Date()).getTime();
+	var newmapstyle =[
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": "-29"
+            },
+            {
+                "lightness": "0"
+            },
+            {
+                "hue": "#ff8d00"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": "-50"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": "5"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": "-2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": "-17"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": "-64"
+            },
+            {
+                "lightness": "-8"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": "-40"
+            },
+            {
+                "saturation": "-61"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#8e3911"
+            },
+            {
+            	"saturation": "50"
+            },
+            
+            {
+                "weight": "1.5"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#c1bdb5"
+            }
+        ]
+    }
+]
 	var mapstyle = [
 				{
 					"featureType": "water",
@@ -217,7 +312,7 @@
           center: new google.maps.LatLng(-106.262683,31.564923),
           zoom: 2,
           mapTypeId: 'terrain',
-			styles: mapstyle
+			styles: newmapstyle
         });
         loadKmlLayer(src, map);
       }
