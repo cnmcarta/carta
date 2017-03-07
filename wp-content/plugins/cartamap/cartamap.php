@@ -8,7 +8,7 @@
  * Plugin URI:        http://example.com
  * Description:       Display an interactive map of the Camino Real
  * Version:           0.2.0
- * Author:            CIS1730
+ * Author:            CNM Capstone students: Spring 2017
  * Author URI:        http://example.com
  * Text Domain:       carta-locale
  * License:           GPL-2.0+

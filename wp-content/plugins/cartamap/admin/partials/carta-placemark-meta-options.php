@@ -12,14 +12,14 @@
 	<fieldset class = "outer">
 	<fieldset class ="inner">
 	<legend>Placemark Constants</legend>
-    <label class="carta-placemark-label">Latitude:</label><input class="carta-placemark-input"  name="carta_placemark_lat" type="number" value="<?php echo $lat; ?>"  step="0.0000001" min="18.00" max="40.00" required /><br>
-    <label class="carta-placemark-label">Longitude:</label><input class="carta-placemark-input"  name="carta_placemark_lng" type="number" value="<?php echo $lng; ?>"  step="0.0000001" min="-110.00" max="-95.00" required /><br>
+    <label class="carta-placemark-label"><?php _e('Latitude:', 'cartamap'); ?></label><input class="carta-placemark-input"  name="carta_placemark_lat" type="number" value="<?php echo $lat; ?>"  step="0.0000001" min="18.00" max="40.00" required /><br>
+    <label class="carta-placemark-label"><?php _e('Longitude:', 'cartamap'); ?></label><input class="carta-placemark-input"  name="carta_placemark_lng" type="number" value="<?php echo $lng; ?>"  step="0.0000001" min="-110.00" max="-95.00" required /><br>
 	</fieldset>
 	<fieldset class ="inner">
 	<legend>English Version</legend>
-	<label class="carta-placemark-label">Place Name:</label><input class="carta-placemark-input" name="carta_placemark_place_name_en" value="<?php echo $place_name_en; ?>" /><br>
+	<label class="carta-placemark-label"><?php _e('Place Name:', 'cartamap'); ?></label><input class="carta-placemark-input" name="carta_placemark_place_name_en" value="<?php echo $place_name_en; ?>" /><br>
 	
-    <label class="carta-placemark-label">English Description:</label><br>
+    <label class="carta-placemark-label"><?php _e('English Description:', 'cartamap'); ?></label><br>
 	<?php
 	wp_editor( $description_en, 'description_en', array(
 		'wpautop'       => true,
@@ -32,9 +32,9 @@
     </fieldset>
 	<fieldset class ="inner">
 	<legend>Spanish Version</legend>
-	<label class="carta-placemark-label">Place Name:</label><input class="carta-placemark-input" name="carta_placemark_place_name_es" value="<?php echo $place_name_es; ?>" /><br>
+	<label class="carta-placemark-label"><?php _e('Place Name:', 'cartamap'); ?></label><input class="carta-placemark-input" name="carta_placemark_place_name_es" value="<?php echo $place_name_es; ?>" /><br>
 	
-	<label class="carta-placemark-label">Spanish Description:</label><br>
+	<label class="carta-placemark-label"><?php _e('Spanish Description:', 'cartamap'); ?></label><br>
 	<?php
 	wp_editor( $description_es, 'description_es', array(
 		'wpautop'       => true,
