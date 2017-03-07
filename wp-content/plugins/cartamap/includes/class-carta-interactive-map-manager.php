@@ -137,6 +137,7 @@ class Carta_Interactive_Map_Manager {
 		//see load_dependencies()
 		$public = new Carta_Interactive_Map_Manager_Public( $this->get_version() );
 		//shortcodes
+		
 		//shortcodes must return the content, not produce it directly
 		//https://codex.wordpress.org/Function_Reference/add_shortcode
 		

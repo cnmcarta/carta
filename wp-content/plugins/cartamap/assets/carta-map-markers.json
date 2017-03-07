@@ -1,0 +1,73 @@
+{
+        "markers": [
+        
+            {
+                "ID" : "107",
+                "name" : "Bosque Brewing",
+                "category" : "",
+                "englishName" : "Bosque Brewing",
+                "spanishName" : "",
+                "englishDescr" : "",
+                "spanishDescr" : "",
+                "location" :{
+                    "address" : "",
+                    "state" : "",
+                    "city" : "",
+                    "zipcode" : "",
+                    "lat" : "35.080138",
+                    "long" : "-106.613055"
+                }
+            },
+            {
+                "ID" : "105",
+                "name" : "Starr Brothers Brewing",
+                "category" : "",
+                "englishName" : "Starr Brothers Brewing",
+                "spanishName" : "",
+                "englishDescr" : "",
+                "spanishDescr" : "",
+                "location" :{
+                    "address" : "",
+                    "state" : "",
+                    "city" : "",
+                    "zipcode" : "",
+                    "lat" : "35.159119",
+                    "long" : "-106.580329"
+                }
+            },
+            {
+                "ID" : "102",
+                "name" : "Albuquerque Brewing",
+                "category" : "",
+                "englishName" : "Albuquerque Brewing",
+                "spanishName" : "",
+                "englishDescr" : "",
+                "spanishDescr" : "",
+                "location" :{
+                    "address" : "",
+                    "state" : "",
+                    "city" : "",
+                    "zipcode" : "",
+                    "lat" : "35.182475",
+                    "long" : "-106.581103"
+                }
+            },
+            {
+                "ID" : "73",
+                "name" : "Santa Fe Brewing",
+                "category" : "",
+                "englishName" : "Santa Fe Brewing",
+                "spanishName" : "",
+                "englishDescr" : "",
+                "spanishDescr" : "",
+                "location" :{
+                    "address" : "",
+                    "state" : "",
+                    "city" : "",
+                    "zipcode" : "",
+                    "lat" : "35.105659",
+                    "long" : "-106.603109"
+                }
+            }
+        ]
+    }

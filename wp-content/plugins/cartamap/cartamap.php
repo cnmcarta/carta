@@ -25,10 +25,41 @@
 if ( ! defined( 'WPINC' ) ) {
     die; //can only run as part of WordPress, Cannot directly navigate to this file
 }
+
+/**
+ * 
+ * CONSTANTS
+ * 
+ */
+if ( ! defined( 'CARTA_BASE_FILE' ) )
+    define( 'CARTA_BASE_FILE', __FILE__ );
+if ( ! defined( 'CARTA_BASE_DIR' ) )
+    define( 'CARTA_BASE_DIR', dirname( CARTA_BASE_FILE ) );
+    
 /**
  * Include the core class responsible for loading all necessary components of the plugin.
  */ 
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-carta-interactive-map-manager.php';
+
+
+/**
+ * 
+ * Template
+ * 
+ */
+ 
+ add_filter('template_include', 'carta_page_template');
+ 
+ function carta_page_template($template){
+     if ( is_page( 'interactivemap' )  ) {
+		$new_template = CARTA_BASE_DIR . '/includes/templates/carta-page-template.php' ;
+		if ( '' != $new_template ) {
+			return $new_template ;
+		}
+	}
+	return $template;
+ }
+
  
 /**
  * Instantiates the Carta Interactive Map Manager class and then

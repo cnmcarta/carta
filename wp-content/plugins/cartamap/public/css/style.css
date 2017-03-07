@@ -2,12 +2,12 @@
 * {
             margin: 0;
         }
-body {
-    background: linear-gradient(#8aa8b7, #ffffff, #ffffff, #8aa8b7);
-} 
+/*body {*/
+/*    background: linear-gradient(#8aa8b7, #ffffff, #ffffff, #8aa8b7);*/
+/*} */
 .bodyinside {
-height: 800px;
-margin:0;
+    height: 800px;
+    margin:0;
 }
 
 h1.interactivemap {
@@ -36,73 +36,64 @@ h2 {
 }
 */
 #map {
-    height: 90%;
-    width: 30%;
+    height: 800px;
+    width: 500px;
     overflow: hidden;
     float: left;
-    border: 12px outset #8e2f11;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px 0px #000000;
+    border: 10px solid #8e2f11;
+
 }
 
-#capture {
+/*
+#carta-map-capture {
     background-color: #000000;
 /*
 height: 50%;
 width: 40%;
-*/
+
     height: 560px;
     width: 480px;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    border: 12px outset #8e2f11;
-    border-radius: 10px;
+    border: 10px solid #8e2f11;
+    /*border-radius: 10px;
     box-shadow: 10px 10px 20px 0px #000000;
     background-size: cover;
     background-image: url('/wp-content/uploads/2015/11/2015-06-13-13.43.28-2.jpg');
 }
-#captureBox{
-    height:100%;
-    width:100%;
-    background-color: rgba(0,0,0,0.6);
+#carta-map-capture-box{
+    height: 100%;
+    width: 100%;
+    background-color: rgba( 0, 0, 0, 0.6 );
     margin-top: 0;
     padding: 20px;
     font-family: Georgia;
     font-weight: bold;
 }
 
-#captureBox h1{
+#carta-map-capture-box h1{
     margin-top: 0;
 }
 
-#captureBox h1, p{
+#carta-map-capture-box h1, p{
     color: white;
-    position:relative;
-    top: 100px;
-    left: 480px;
     text-align: center;
     max-width: 440px;
 }
-#captureBox div div{
-	color:#000;
-	text-align:center;
-	height:175px;
-	background-color:#fff;
-	margin-top:-30px;
+#carta-map-capture-box div div{
+	color: #000;
+	text-align: center;
+	height: 175px;
+	background-color: #fff;
+	margin-top: -30px;
+}
+*/
+
+.modal{
+    color: #000;
 }
 
-
-#thePics {
-    background-color: #782805;
-    float: right;
-    width: 20%;
-    height: auto;
-    margin-bottom: 20px;
-    border: 10px outset #8e2f11;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px 0px #000000;
-}
 .space {
     margin-bottom: 10px;
 }

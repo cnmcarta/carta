@@ -1,0 +1,16 @@
+[04-Mar-2017 21:52:18 UTC] PHP Warning:  require_once(/home/ubuntu/workspace/wp-content/plugins/cartamap/src/wp-includes/pomo/po.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/not-gettexted.php on line 16
+[04-Mar-2017 21:52:18 UTC] PHP Stack trace:
+[04-Mar-2017 21:52:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:0
+[04-Mar-2017 21:52:18 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:2
+[04-Mar-2017 21:52:18 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/ubuntu/workspace/wp-content/plugins/cartamap/src/wp-includes/pomo/po.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/not-gettexted.php on line 16
+[04-Mar-2017 21:52:18 UTC] PHP Stack trace:
+[04-Mar-2017 21:52:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:0
+[04-Mar-2017 21:52:18 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:2
+[04-Mar-2017 21:53:20 UTC] PHP Warning:  require_once(/home/ubuntu/workspace/wp-content/plugins/cartamap/src/wp-includes/pomo/po.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/not-gettexted.php on line 16
+[04-Mar-2017 21:53:20 UTC] PHP Stack trace:
+[04-Mar-2017 21:53:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:0
+[04-Mar-2017 21:53:20 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:2
+[04-Mar-2017 21:53:20 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/ubuntu/workspace/wp-content/plugins/cartamap/src/wp-includes/pomo/po.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/not-gettexted.php on line 16
+[04-Mar-2017 21:53:20 UTC] PHP Stack trace:
+[04-Mar-2017 21:53:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:0
+[04-Mar-2017 21:53:20 UTC] PHP   2. require_once() /home/ubuntu/workspace/wp-content/plugins/cartamap/tools/i18n/makepot.php:2

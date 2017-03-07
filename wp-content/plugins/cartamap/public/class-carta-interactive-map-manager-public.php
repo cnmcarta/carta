@@ -56,17 +56,28 @@ class Carta_Interactive_Map_Manager_Public {
 
 	}
 	*/
-	
 	/**
 	 * Requires the file that is used to display the shortcode content.
 	 */	
 	public function shortcode_cartamap() {
 		//shortcodes must return content, not produce it directly 
 		//https://codex.wordpress.org/Function_Reference/add_shortcode
+		
+		wp_register_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', false );
+
+		wp_register_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+
+		wp_enqueue_script( 'bootstrap-js' );
+
+		wp_enqueue_style( 'bootstrap-css' );
+		
 		ob_start();
-		wp_enqueue_style('carta_interactive_map_manager_public',plugin_dir_url( __FILE__ ) . 'css/style.css',array(),$this->version,FALSE);
-		require_once plugin_dir_path( __FILE__ ) . 'partials/shortcode_cartamap.php';
+		
+		wp_enqueue_style('carta_interactive_map_manager_public', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, FALSE);
+		
+		require_once plugin_dir_path( __FILE__ ) . 'partials/shortcode-cartamap.php';
 		return ob_get_clean();		
 	}	
 
+	
 }

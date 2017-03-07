@@ -26,13 +26,31 @@ class Carta_Interactive_Map_Manager_Admin {
 	 */	
 	private $version;
 	
+		/**
+	 * A reference to the version of the plugin that is passed to this class from the caller.
+	 *
+	 * @access private
+	 * @var    Carta_Map_Json_Generator (class-carta-map-json-generator.php)		$carta_map_json		The class that will generate the Json file.
+	 */	
+	private $carta_map_json;
+	
 	/**
 	 * Initializes this class and stores the current version of this plugin.
 	 *
 	 * @param    string    $version    The current version of this plugin.
+	 * @param	 Carta_Map_Json_Generator	$carta_map_json		The class that will generate the Json file.
 	 */
 	public function __construct( $version ) {
 		$this->version = $version;
+		$this->load_dependencies();
+		$this->carta_map_json = new Carta_Map_Json_Generator();
+	}
+	
+	//add in any dependencies for your functions here
+	private function load_dependencies(){
+		
+		require_once(plugin_dir_path( __FILE__ ) . 'class-carta-map-json-generator.php');
+		
 	}
 	
 	/**
@@ -48,6 +66,7 @@ class Carta_Interactive_Map_Manager_Admin {
 			FALSE
 		);
 	}
+	
 	public function register_carta_placemark_post_type() {
 	  register_post_type( 'carta_placemark',
 		array(
@@ -76,14 +95,16 @@ class Carta_Interactive_Map_Manager_Admin {
 	
 	public function save_carta_placemark_meta_fields() {
 		global $post;
-		require('partials/validate.php');
+		//require 'validate.php';
+		
 		$carta_placemark_lat = sanitize_text_field( $_POST['carta_placemark_lat'] );
-		//if (validate_lat($carta_placemark_lat)) {
+		//if (isset($carta_placemark_lat) && is_valid_lat($carta_placemark_lat)){
 			update_post_meta($post->ID, "carta_placemark_lat", $carta_placemark_lat);
-		// }
-		// else {
-		// 	add_action('admin_notices', 'invalid_lat_admin_notice');
-		// }
+		//	add_action('admin_notices', 'invalid_lat_admin_notice');
+		//}
+		//else{
+		//	add_action('admin_notices', 'invalid_lat_admin_notice');
+		//}
 		
 		$carta_placemark_lng = sanitize_text_field( $_POST['carta_placemark_lng'] );
 		update_post_meta($post->ID, "carta_placemark_lng", $carta_placemark_lng);
@@ -93,8 +114,15 @@ class Carta_Interactive_Map_Manager_Admin {
 		update_post_meta($post->ID, "carta_placemark_place_name_es", $carta_placemark_place_name_es);
 		$carta_placemark_description_en = sanitize_text_field( $_POST['carta_placemark_description_en'] );
 		update_post_meta($post->ID, "carta_placemark_description_en", $carta_placemark_description_en);
-		$carta_placemark_description_es = sanitize_text_field( $_POST['$carta_placemark_description_es'] );
+		$carta_placemark_description_es = sanitize_text_field( $_POST['carta_placemark_description_es'] );
 		update_post_meta($post->ID, "carta_placemark_description_es", $carta_placemark_description_es);
+		
+
+    		// it's an existing record
+    		//Write the save data to the json file
+			$this->carta_map_json->createjsonfile('carta_placemark');
+
+
 	}
 	
 	
