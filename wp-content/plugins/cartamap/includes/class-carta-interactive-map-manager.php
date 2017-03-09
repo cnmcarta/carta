@@ -148,6 +148,8 @@ class Carta_Interactive_Map_Manager {
 		//$this->loader->add_shortcode( 'interactive_cartamap','Carta_Interactive_Map_Manager_Admin','shortcode_cartamap' );
 		//add_shortcode( 'interactive_cartamap', array( 'Carta_Interactive_Map_Manager_Admin', 'shortcode_cartamap' ) );
 		*/
+		//apply custom template to the public map page
+		$this->loader->add_filter( 'template_include',$public,'carta_page_template' );
 	
 	}	
 
