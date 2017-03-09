@@ -42,23 +42,6 @@ if ( ! defined( 'CARTA_BASE_DIR' ) )
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-carta-interactive-map-manager.php';
 
 
-/**
- * 
- * Template
- * 
- */
- 
- add_filter('template_include', 'carta_page_template');
- 
- function carta_page_template($template){
-     if ( is_page( 'interactivemap' )  ) {
-		$new_template = CARTA_BASE_DIR . '/includes/templates/carta-page-template.php' ;
-		if ( '' != $new_template ) {
-			return $new_template ;
-		}
-	}
-	return $template;
- }
 
  
 /**
@@ -69,7 +52,6 @@ function run_carta_interactive_map_manager() {
  
     $cimm = new Carta_Interactive_Map_Manager();
     $cimm->run();
- 
 }
 // Call the above function to begin execution of the plugin.
 run_carta_interactive_map_manager();
