@@ -35,28 +35,6 @@ class Carta_Interactive_Map_Manager_Public {
 	}
 
 	/**
-	 * Uses the partial located in the admin directory for rendering the
-	 * post meta data the end of the post content.
-	 *
-	 * @param    string    $content    The post content.
-	 * @return   string    $content    The post content including the given posts meta data.
-	 */
-	 /*
-	public function display_post_meta_data( $content ) {
-
-		ob_start();
-
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/single-post-meta-manager.php';
-		$template = ob_get_contents();
-		$content .= $template;
-
-		ob_end_clean();
-
-		return $content;
-
-	}
-	*/
-	/**
 	 * Requires the file that is used to display the shortcode content.
 	 */	
 	public function shortcode_cartamap() {
@@ -77,7 +55,23 @@ class Carta_Interactive_Map_Manager_Public {
 		
 		require_once plugin_dir_path( __FILE__ ) . 'partials/shortcode-cartamap.php';
 		return ob_get_clean();		
-	}	
+	}
+	/**
+	 * 
+	 * Custom template for public map page 
+	 * 
+	 */
+	  
+	 function carta_page_template($template){
+		 if ( is_page( 'interactivemap' )  ) {
+			$new_template = plugin_dir_path( __FILE__ ) . '/templates/carta-page-template.php' ;
+			if ( '' != $new_template ) {
+				return $new_template ;
+			}
+		}
+		return $template;
+	 }
+	 
 
 	
 }
