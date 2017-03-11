@@ -366,9 +366,11 @@ var mapstyle = [
                     
                     $("#modal-title").html(this.content.name);
                     
-                    /*TODO: add in some case statements to change the content between spanish and english */ 
-                    $("#modal-body-content").html("Latitude:" + this.content.location.lat + "<br />" + "Longitude:" + this.content.location.long);
                     
+                    /*TODO: add in some case statements to change the content between spanish and english */ 
+                    $("#modal-body-location").html("Latitude:" + this.content.location.lat + "<br />" + "Longitude:" + this.content.location.long);
+                    $("#modal-body-eng").html("English Description: " + this.content.englishDescr);
+                    $("#modal-body-spn").html("Spanish Description: " + this.content.spanishDescr);
                     $("#map-info-modal").modal("show");
 		  
                 });
@@ -379,11 +381,6 @@ var mapstyle = [
                 
             loadKmlLayer(src, map);
         }
-            
-
-
-      
-      
 
       /**
        * Adds a KMLLayer based on the URL passed. Clicking on a marker
@@ -415,6 +412,7 @@ var mapstyle = [
         <div id="map-info-modal" class="modal fade" role="dialog">
         
           <div class="modal-dialog">
+             
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -422,9 +420,11 @@ var mapstyle = [
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title" id="modal-title">Modal Header</h4>
                 </div>
-        
+                
                 <div class="modal-body" >
-                    <p id="modal-body-content">Some text in the modal.</p>
+                    <p id="modal-body-location">Some text in the modal.</p>
+                    <p id ="modal-body-eng"></p>
+                    <p id ="modal-body-spn"></p>
                 </div>
         
                 <div class="modal-footer">

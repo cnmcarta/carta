@@ -13,9 +13,10 @@ class Carta_Map_Json_Generator {
         if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
           return;
         }
-        $args = array('post_type' => $custom_post_type);
+        global $wpdb;
+        $results = $wpdb->get_results( 'SELECT * FROM wp_posts WHERE post_type = carta_placemark');
+        $args = array('post_type' => $custom_post_type, 'numberposts' => $results);
         $map_points = get_posts($args);
-
         $jsonFile .=
         '{
         "markers": [

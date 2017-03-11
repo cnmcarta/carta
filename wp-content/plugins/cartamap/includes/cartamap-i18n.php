@@ -24,7 +24,7 @@
  * @subpackage cartamap/includes
  * @author     Stephen Gralton <stephen.gralton@gmail.com>, Matthew Vicetjindawat, Brandy Yeazell, Andrew Kapuscinski, Eduardo Vazquez, John Cairns, 
  */
-class Cartamap_i18n {
+//class Cartamap_i18n {
 
 
 	/**
@@ -32,7 +32,7 @@ class Cartamap_i18n {
 	 *
 	 * @since    1.0.0
 	 */
-	public function load_plugin_textdomain() {
+	public function load_textdomain() {
 
 		load_plugin_textdomain(
 			'cartamap',

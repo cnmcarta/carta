@@ -69,6 +69,7 @@ class Carta_Interactive_Map_Manager {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		
+		
 
 	}
 	
@@ -89,9 +90,10 @@ class Carta_Interactive_Map_Manager {
 		//admin dashboard content
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-carta-interactive-map-manager-admin.php';
 		
+		
 		//public facing content
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-carta-interactive-map-manager-public.php';
-
+		
 		require_once plugin_dir_path( __FILE__ ) . 'class-carta-interactive-map-manager-loader.php';
 		$this->loader = new Carta_Interactive_Map_Manager_Loader();
 	}
@@ -121,6 +123,8 @@ class Carta_Interactive_Map_Manager {
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
 		//save carta_placemark_post_type meta data
 		$this->loader->add_action( 'save_post', $admin, 'save_carta_placemark_meta_fields' );
+		// i18n
+		//$this->loader->add_action( 'plugins_loaded', $admin, 'load_textdomain' );
 	}
 	
 	/**
@@ -143,15 +147,17 @@ class Carta_Interactive_Map_Manager {
 		
 		//example for plugin designed as a class
 		//https://developer.wordpress.org/reference/functions/add_shortcode/
-		$this->loader->add_shortcode( 'interactive_cartamap',$public,'shortcode_cartamap' );
+		$this->loader->add_shortcode( 'interactive_cartamap', $public, 'shortcode_cartamap' );
 		/* following variations also work
 		//$this->loader->add_shortcode( 'interactive_cartamap','Carta_Interactive_Map_Manager_Admin','shortcode_cartamap' );
 		//add_shortcode( 'interactive_cartamap', array( 'Carta_Interactive_Map_Manager_Admin', 'shortcode_cartamap' ) );
 		*/
 		//apply custom template to the public map page
-		$this->loader->add_filter( 'template_include',$public,'carta_page_template' );
+		$this->loader->add_filter( 'template_include', $public, 'carta_page_template' );
+		//$this->loader->load_plugin_textdomain($this->textdomain, false, dirname(plugin_basename(__FILE__)) . '/languages');
 	
 	}	
+	
 
 	/**
 	 * Sets this class into motion.
@@ -172,5 +178,16 @@ class Carta_Interactive_Map_Manager {
 	public function get_version() {
 		return $this->version;
 	}
+
+
+// /**
+//  * Load plugin textdomain.
+//  *
+//  * @since 1.0.0
+//  */
+// function cartamap_load_textdomain() {
+//   load_plugin_textdomain( 'cartamap', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+// }
+// add_action( 'init', 'cartamap_load_textdomain' );
 
 }

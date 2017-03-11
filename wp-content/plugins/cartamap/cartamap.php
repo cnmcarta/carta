@@ -13,6 +13,7 @@
  * Text Domain:       carta-locale
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: cartamap-locale
  * Domain Path:       /languages
  */
  // Domain path is used to internationalize the plugin

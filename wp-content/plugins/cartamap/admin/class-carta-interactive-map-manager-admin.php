@@ -125,5 +125,7 @@ class Carta_Interactive_Map_Manager_Admin {
 
 	}
 	
+
+	
 	
 }
