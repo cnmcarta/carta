@@ -68,20 +68,20 @@ class Carta_Interactive_Map_Manager_Admin {
 	}
 	
 	public function register_carta_placemark_post_type() {
-	  register_post_type( 'carta_placemark',
-		array(
-		  'labels' => array(
-			'name' => __( 'Carta Placemark' ),
-			'singular_name' => __( 'Carta Placemark' )
-		  ),
-		  'public' => true,
-		  'has_archive' => true,
-		)
-	  );
-	  //remove the default editor box
-	  //http://wordpress.stackexchange.com/questions/6856/
-	  remove_post_type_support( 'carta_placemark', 'editor' );
-	}	
+		register_post_type( 'carta_placemark',
+			array(
+				'labels' => array(
+				'name' => __( 'Carta Placemark' ),
+				'singular_name' => __( 'Carta Placemark' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			)
+		);
+	//remove the default editor box
+	//http://wordpress.stackexchange.com/questions/6856/
+	remove_post_type_support( 'carta_placemark', 'editor' );
+	}
 	public function display_carta_placemark_meta_fields() {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
@@ -118,14 +118,18 @@ class Carta_Interactive_Map_Manager_Admin {
 		update_post_meta($post->ID, "carta_placemark_description_es", $carta_placemark_description_es);
 		
 
-    		// it's an existing record
-    		//Write the save data to the json file
+			// it's an existing record
+			//Write the save data to the json file
 			$this->carta_map_json->createjsonfile('carta_placemark');
 
 
 	}
-	
-
-	
-	
+		public function carta_localization() {
+		$path = dirname(plugin_basename( __FILE__ )) . '/languages/';
+		$loaded = load_plugin_textdomain( 'cartamap', false, $path);
+			if ($_GET['page'] == basename(__FILE__) && !$loaded) {          
+				echo '<div class="error">CARTA Localization: ' . __('Could not load the localization file: ' . $path, 'CARTA Localization') . '</div>';
+				return;
+			}
+		}
 }

@@ -1,0 +1,1 @@
+[01-Mar-2017 21:57:31 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE), expecting '{' in /home/ubuntu/workspace/wp-content/plugins/cartamap/admin/carta_map_json_generator.php on line 6

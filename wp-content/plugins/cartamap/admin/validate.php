@@ -28,6 +28,4 @@ function is_valid_lng($carta_placemark_lng) {
     }
     else return true;
 }
-
-
 ?>
