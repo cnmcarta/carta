@@ -1,35 +1,29 @@
 /* custom post type Carta Placemark */
-#carta-placemark-meta
-{
+#carta-placemark-meta {
 	overflow: hidden;
-    padding-bottom: 1em;
+	padding-bottom: 1em;
 }
 
-#carta-placemark-meta div
-{
+#carta-placemark-meta div {
 	clear: both;
 }
 
-.carta-placemark-label
-{
+.carta-placemark-label {
 	display: block;
-    float: left;
-    width: 200px;
+	float: left;
+	width: 200px;
 }
 
-.carta-placemark-input
-{
-	padding-left:3px;
+.carta-placemark-input {
+	padding-left: 3px;
 	display: block;
 }
 
-fieldset.outer{
+fieldset.outer {
 	border: 1px dotted #000;
 }
 
-fieldset.inner{
+fieldset.inner {
 	border: 1px dotted #ccc;
 	margin: 3px;
 }
-
-

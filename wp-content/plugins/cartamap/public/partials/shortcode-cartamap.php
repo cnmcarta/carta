@@ -8,8 +8,8 @@
 
 
     <script>
-	var map;
-	var src = 'http://carta.korwest.com/wp-content/plugins/cartamap/assets/cartamap.kml?cachebust='+(new Date()).getTime();
+    var map;
+    var src = 'http://carta.korwest.com/wp-content/plugins/cartamap/assets/cartamap.kml?cachebust='+(new Date()).getTime();
 	var newmapstyle =[
     {
         "featureType": "all",

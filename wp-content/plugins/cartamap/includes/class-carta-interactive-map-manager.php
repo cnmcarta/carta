@@ -125,6 +125,7 @@ class Carta_Interactive_Map_Manager {
 		$this->loader->add_action( 'save_post', $admin, 'save_carta_placemark_meta_fields' );
 		// i18n
 		//$this->loader->add_action( 'plugins_loaded', $admin, 'load_textdomain' );
+		$this->loader->add_action('init', $admin,'carta_localization');
 	}
 	
 	/**
