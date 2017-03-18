@@ -121,6 +121,7 @@ class Carta_Interactive_Map_Manager {
 		$this->loader->add_action( 'admin_init', $admin, 'display_carta_placemark_meta_fields' );
 		//admin page styles for carta placemark custom post type
 		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
 		//save carta_placemark_post_type meta data
 		$this->loader->add_action( 'save_post', $admin, 'save_carta_placemark_meta_fields' );
 		// i18n
@@ -179,16 +180,5 @@ class Carta_Interactive_Map_Manager {
 	public function get_version() {
 		return $this->version;
 	}
-
-
-// /**
-//  * Load plugin textdomain.
-//  *
-//  * @since 1.0.0
-//  */
-// function cartamap_load_textdomain() {
-//   load_plugin_textdomain( 'cartamap', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
-// }
-// add_action( 'init', 'cartamap_load_textdomain' );
 
 }

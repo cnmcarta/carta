@@ -27,7 +27,6 @@ class Carta_Map_Json_Generator {
                     $jsonFile .= '
                 {
                     "ID" : "' . $map_point->ID . '",
-                    "name" : "' . $map_point->post_title . '",
                     "category" : "' . $map_point->post_category[0] . '",
                     "englishName" : "' . get_post_meta($map_point->ID, 'carta_placemark_place_name_en', true) . '",
                     "spanishName" : "' . get_post_meta($map_point->ID, 'carta_placemark_place_name_es', true) . '",
@@ -40,7 +39,9 @@ class Carta_Map_Json_Generator {
                         "zipcode" : "' . get_post_meta($map_point->ID, 'carta_placemark_zipcode', true) . '",
                         "lat" : "' . get_post_meta($map_point->ID, 'carta_placemark_lat', true) . '",
                         "long" : "' . get_post_meta($map_point->ID, 'carta_placemark_lng', true) . '"
-                    }
+                    },
+                    "mediaUrl" : "' . get_post_meta($map_point->ID, 'carta_placemark_media', true) . '",
+                    "mediaType" : "' . get_post_meta($map_point->ID, 'carta_placemark_media_type', true) . '"
                 }';
                     if(end($map_points)->ID !== $map_point->ID ){
                         $jsonFile .= ',';

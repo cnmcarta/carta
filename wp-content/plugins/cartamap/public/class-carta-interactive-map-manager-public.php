@@ -52,6 +52,7 @@ class Carta_Interactive_Map_Manager_Public {
 		ob_start();
 		
 		wp_enqueue_style('carta_interactive_map_manager_public', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, FALSE);
+		wp_enqueue_style('carta_interactive_map_manager_public1', plugin_dir_url( __FILE__ ) . 'css/modal.css', array(), $this->version, FALSE);
 		
 		require_once plugin_dir_path( __FILE__ ) . 'partials/shortcode-cartamap.php';
 		return ob_get_clean();
@@ -73,13 +74,4 @@ class Carta_Interactive_Map_Manager_Public {
 		}
 		return $template;
 	 }
-	 
-	 /**
-	  * 
-	  * Localization & Internationalization
-	  * 
-	  */
-	  
-	
-	
 }

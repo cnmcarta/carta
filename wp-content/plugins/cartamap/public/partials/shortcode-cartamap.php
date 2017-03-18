@@ -19,7 +19,7 @@
                 "saturation": "-29"
             },
             {
-                "lightness": "0"
+            "lightness": "0"
             },
             {
                 "hue": "#ff8d00"
@@ -344,13 +344,13 @@ var mapstyle = [
                 scaleControl: true,
 	    	    styles: newmapstyle
             });
-        
+        console.log('after map init');
 
             
             for (var i = 0; i < mapMarkers.length; i++) {
                 
                 var markerLatLng = new google.maps.LatLng(mapMarkers[i].location.lat, mapMarkers[i].location.long);
-                
+                console.log('inside forloop');
                 
                 var setMarker = new google.maps.Marker({
                     position: markerLatLng,
@@ -364,11 +364,10 @@ var mapstyle = [
 
                     //I have no idea what "this" is but it's what you need to select to get the info
                     
-                    $("#modal-title").html(this.content.name);
+                    $("#modal-title").html(this.content.englishName);
                     
-                    
-                    /*TODO: add in some case statements to change the content between spanish and english */ 
-                    $("#modal-body-location").html("Latitude:" + this.content.location.lat + "<br />" + "Longitude:" + this.content.location.long);
+                    /*To add in some case statements to change the content between spanish and english */ 
+                    $("#modal-body-location").html("Latitude: " + this.content.location.lat + ", " + "Longitude: " + this.content.location.long);
                     $("#modal-body-eng").html("English Description: " + this.content.englishDescr);
                     $("#modal-body-spn").html("Spanish Description: " + this.content.spanishDescr);
                     $("#map-info-modal").modal("show");
@@ -382,20 +381,20 @@ var mapstyle = [
             loadKmlLayer(src, map);
         }
 
-      /**
-       * Adds a KMLLayer based on the URL passed. Clicking on a marker
-       * results in the balloon content being loaded into the right-hand div.
-       * @param {string} src A URL for a KML file.
-       */
-      function loadKmlLayer(src, map) {
+    /**
+    * Adds a KMLLayer based on the URL passed. Clicking on a marker
+    * results in the balloon content being loaded into the right-hand div.
+    * @param {string} src A URL for a KML file.
+    */
+    function loadKmlLayer(src, map) {
         var kmlLayer = new google.maps.KmlLayer(src, {
-          suppressInfoWindows: true,
-          preserveViewport: false,
-          map: map
+            suppressInfoWindows: true,
+            preserveViewport: false,
+            map: map
         });
         
 
-       }
+    }
       </script>
     
 
@@ -415,20 +414,37 @@ var mapstyle = [
              
 
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="modal-title">Modal Header</h4>
-                </div>
-                
-                <div class="modal-body" >
-                    <p id="modal-body-location">Some text in the modal.</p>
-                    <p id ="modal-body-eng"></p>
-                    <p id ="modal-body-spn"></p>
-                </div>
-        
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <div class="container">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="modal-title">Modal Header</h1>
+                        <p id="modal-body-location">Some text in the modal.</p>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>Info</h4>
+                                <p id ="modal-body-eng"></p>
+                                <p id ="modal-body-spn"></p>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Videos</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Pictures</h4>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+            
+                    <div class="modal-footer">
+                        <img class="text-left" src="src="http://carta.korwest.com/wp-content/uploads/2015/10/carta-logo.png""></img>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
 

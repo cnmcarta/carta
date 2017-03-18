@@ -67,6 +67,16 @@ class Carta_Interactive_Map_Manager_Admin {
 		);
 	}
 	
+	public function enqueue_scripts(){
+		wp_enqueue_script(
+			'carta',
+			plugin_dir_url( __FILE__ ) . 'js/media-upload.js',
+			array('jquery'),
+			$this->version,
+			FALSE
+		);	
+	}
+		
 	public function register_carta_placemark_post_type() {
 		register_post_type( 'carta_placemark',
 			array(
@@ -86,12 +96,15 @@ class Carta_Interactive_Map_Manager_Admin {
 		//https://developer.wordpress.org/reference/functions/add_meta_box/
 		//add_meta_box(id,title,callback,screen,context,priority,callback_args)
 		add_meta_box("carta_placemark_meta", "Carta Placemark Details", array($this,"render_carta_placemark_meta_options"), "carta_placemark", "normal", "default");
+		add_meta_box('carta_media_meta', 'Carta Placemark Media', array($this, "render_carta_placemark_media_meta_options"), 'carta_placemark', 'normal', 'low');
 	}
 	public function render_carta_placemark_meta_options() {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-placemark-meta-options.php';
 	}
 	
-	
+	public function render_carta_placemark_media_meta_options(){
+		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-placemark-media-meta-options.php';
+	}
 	
 	public function save_carta_placemark_meta_fields() {
 		global $post;
@@ -116,6 +129,10 @@ class Carta_Interactive_Map_Manager_Admin {
 		update_post_meta($post->ID, "carta_placemark_description_en", $carta_placemark_description_en);
 		$carta_placemark_description_es = sanitize_text_field( $_POST['carta_placemark_description_es'] );
 		update_post_meta($post->ID, "carta_placemark_description_es", $carta_placemark_description_es);
+		$carta_placemark_media = sanitize_text_field( $_POST['carta_placemark_media'] );
+		update_post_meta($post->ID, "carta_placemark_media", $carta_placemark_media);
+		$carta_placemark_media_type = sanitize_text_field( $_POST['carta_placemark_media_type'] );
+		update_post_meta($post->ID, "carta_placemark_media_type", $carta_placemark_media_type);
 		
 
 			// it's an existing record
