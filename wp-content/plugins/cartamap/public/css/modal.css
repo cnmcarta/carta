@@ -4,6 +4,15 @@
 #map-info-modal {
     
 }
+h1 {
+    font-size: 2.5em;
+}
+.carta-mini-logo{
+    display: none;
+}
+.carta-logo{
+        display: block;
+    }
 
 .modal-dialog {
     position: absolute;
@@ -17,13 +26,15 @@
 }
 
 .modal-content {
-    min-height: 100%;
+    /*min-height: 100%;*/
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0; 
     border: 5px solid #8e2f11;
+	z-index: 1050;
+	overflow-y: hidden;
 }
 .modal-header {
     padding-top: 25px;
@@ -45,14 +56,24 @@
 .modal-title {
     color: #8e2f11;
 }
-/*.modal-body {*/
-/*    position: absolute;*/
-/*    top: 45px;*/
-/*    bottom: 45px;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    overflow-y: auto;*/
-/*}*/
+
+.modal-backdrop.in {
+    opacity: 0 !important;
+    z-index: -100 !important;
+}
+.modal-body .row {
+    padding-bottom: 250px;
+}
+
+.modal-body {
+    /*position: absolute;*/
+    /*top: 45px;*/
+    /*bottom: 45px;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    overflow-y: scroll;
+    max-height: 80vh;
+}
 
 
 /*#modal-body-location {*/
@@ -70,5 +91,44 @@
     left: 0;
     right: 0;
     background-color: #cddce5;
+    max-height: 90px;
 }
 
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .carta-mini-logo{
+        display: block;
+    }
+    .carta-logo{
+        display: none;
+    }
+    .modal-footer{
+        max-height: 65px;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    h1 {
+        font-size: 1em;
+    }
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}
