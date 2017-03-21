@@ -414,7 +414,7 @@ var mapstyle = [
              
 
             <!-- Modal content-->
-            <div class="container">
+            <div class="">
                 <div class="modal-content">
                     
                     <div class="modal-header">
@@ -437,13 +437,12 @@ var mapstyle = [
                                 <h4>Pictures</h4>
                             </div>
                         </div>
-                        
-                        
                     </div>
             
                     <div class="modal-footer">
-                        <img class="text-left" src="src="http://carta.korwest.com/wp-content/uploads/2015/10/carta-logo.png""></img>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <img class="carta-logo" src="/wp-content/plugins/cartamap/assets/carta-logo.png"></img>
+                        <img class="carta-mini-logo" src="/wp-content/plugins/cartamap/assets/mini-carta-logo.png"></img>
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
                     </div>
                 </div>
             </div>
