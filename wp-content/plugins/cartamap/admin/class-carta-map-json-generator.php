@@ -28,10 +28,10 @@ class Carta_Map_Json_Generator {
                 {
                     "ID" : "' . $map_point->ID . '",
                     "category" : "' . $map_point->post_category[0] . '",
-                    "englishName" : "' . get_post_meta($map_point->ID, 'carta_placemark_place_name_en', true) . '",
-                    "spanishName" : "' . get_post_meta($map_point->ID, 'carta_placemark_place_name_es', true) . '",
-                    "englishDescr" : "' . get_post_meta($map_point->ID, 'carta_placemark_description_en', true) . '",
-                    "spanishDescr" : "' . get_post_meta($map_point->ID, 'carta_placemark_description_es', true) . '",
+                    "englishName" : "' . esc_html( get_post_meta($map_point->ID, 'carta_placemark_place_name_en', true) ) . '",
+                    "spanishName" : "' . esc_html( get_post_meta($map_point->ID, 'carta_placemark_place_name_es', true) ) . '",
+                    "englishDescr" : "' . esc_html( get_post_meta($map_point->ID, 'carta_placemark_description_en', true) ) . '",
+                    "spanishDescr" : "' . esc_html( get_post_meta($map_point->ID, 'carta_placemark_description_es', true) ) . '",
                     "location" :{
                         "address" : "' . get_post_meta($map_point->ID, 'carta_placemark_address', true) . '",
                         "state" : "' . get_post_meta($map_point->ID, 'carta_placemark_state', true) . '",
@@ -40,12 +40,12 @@ class Carta_Map_Json_Generator {
                         "lat" : "' . get_post_meta($map_point->ID, 'carta_placemark_lat', true) . '",
                         "long" : "' . get_post_meta($map_point->ID, 'carta_placemark_lng', true) . '"
                     },
-                    "mediaUrl" : "' . get_post_meta($map_point->ID, 'carta_placemark_media', true) . '",
-                    "mediaType" : "' . get_post_meta($map_point->ID, 'carta_placemark_media_type', true) . '"
+                    "imageUrl" : "' . get_post_meta($map_point->ID, 'carta_placemark_image', true) . '",
+                    "videoUrl" : "' . get_post_meta($map_point->ID, 'carta_placemark_video', true) . '"
                 }';
-                    if(end($map_points)->ID !== $map_point->ID ){
-                        $jsonFile .= ',';
-                    }
+                if( end($map_points)->ID !== $map_point->ID ){
+                    $jsonFile .= ',';
+                }
             };
         $jsonFile .='
             ]

@@ -2,29 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>KmlFile</name>
-    <Style id="estancia">
-      <IconStyle>
-        <Icon>
-          <href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png
-          </href>
-        </Icon>
-      </IconStyle>
-      <BalloonStyle>
-        <text>$[video]</text>
-      </BalloonStyle>	  
-	  
-    </Style>
-    <Style id="grants">
-      <IconStyle>
-        <Icon>
-          <href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png
-          </href>
-        </Icon>
-      </IconStyle>
-      <BalloonStyle>
-        <text>$[video]</text>
-      </BalloonStyle>	  
-    </Style>	
+	
 	<Style id="linestyleExample">
 		<LineStyle>
 		  <color>7f112f8e</color>
@@ -32,40 +10,6 @@
 		  <gx:labelVisibility>1</gx:labelVisibility>
 		</LineStyle>
 	</Style>	
-
-<Placemark>
-    <name>La Bajada, NM</name>
-    <description>La Bajada</description>
-	   <styleUrl>#estancia</styleUrl>
-    <Point>
-      <coordinates>-106.2003011,35.5689221,0</coordinates>
-    </Point>
-      <ExtendedData>
-        <Data name="video">
-          <value><![CDATA[<iframe width="480" height="360"
-            src="https://www.youtube.com/embed/Uy6Bx6Tk6Os" frameborder="0"
-            allowfullscreen></iframe><div>La Bajada, New Mexico</div>]]></value>
-        </Data>
-      </ExtendedData>		
-	
-</Placemark>
-
-<Placemark>
-    <name>Engle, NM</name>
-    <description>Engle, NM</description>
-	   <styleUrl>#grants</styleUrl>
-    <Point>
-      <coordinates>-107.043358,33.1789623,0</coordinates>
-    </Point>
-      <ExtendedData>
-        <Data name="video">
-          <value><![CDATA[<iframe width="480" height="360"
-            src="https://www.youtube.com/embed/cWNhMk7bwjM" frameborder="0"
-            allowfullscreen></iframe><div>Engle, New Mexico</div>]]></value>
-        </Data>
-      </ExtendedData>	
-</Placemark>
-
 
 <Placemark><styleUrl>#linestyleExample</styleUrl><MultiGeometry>
 <LineString><extrude>false</extrude><tessellate>false</tessellate><coordinates>-106.262683,31.564923,0.000000 -106.262110,31.562747,0.000000 -106.261912,31.559109,0.000000 -106.261378,31.554351,0.000000 -106.260767,31.549260,0.000000</coordinates></LineString>

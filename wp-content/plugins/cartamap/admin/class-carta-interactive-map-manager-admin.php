@@ -75,6 +75,7 @@ class Carta_Interactive_Map_Manager_Admin {
 			$this->version,
 			FALSE
 		);	
+		
 	}
 		
 	public function register_carta_placemark_post_type() {
@@ -129,10 +130,10 @@ class Carta_Interactive_Map_Manager_Admin {
 		update_post_meta($post->ID, "carta_placemark_description_en", $carta_placemark_description_en);
 		$carta_placemark_description_es = sanitize_text_field( $_POST['carta_placemark_description_es'] );
 		update_post_meta($post->ID, "carta_placemark_description_es", $carta_placemark_description_es);
-		$carta_placemark_media = sanitize_text_field( $_POST['carta_placemark_media'] );
-		update_post_meta($post->ID, "carta_placemark_media", $carta_placemark_media);
-		$carta_placemark_media_type = sanitize_text_field( $_POST['carta_placemark_media_type'] );
-		update_post_meta($post->ID, "carta_placemark_media_type", $carta_placemark_media_type);
+		$carta_placemark_image = esc_url_raw( $_POST['carta_placemark_image'] );
+		update_post_meta($post->ID, "carta_placemark_image", $carta_placemark_image);
+		$carta_placemark_video = esc_url_raw( $_POST['carta_placemark_video'] );
+		update_post_meta($post->ID, "carta_placemark_video", $carta_placemark_video);
 		
 
 			// it's an existing record

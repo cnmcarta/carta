@@ -1,11 +1,15 @@
 jQuery(function($){
-    
+
     var frame,
         metabox = $('#map-media-meta'),
         uploadFile = metabox.find('.upload-file'),
         deleteFile = metabox.find('.delete-file'),
         imgContainer = metabox.find('.uploaded-image'),
-        imgId = metabox.find('#upload-img-id')
+        imgUrl = metabox.find('#upload-img-url');
+        uploadVideo = metabox.find('.upload-video');
+        videoUrl = metabox.find('#upload-video-url');
+        videoInput = metabox.find('#upload-video-url-input');
+        videoFrame = metabox.find('.embed-responsive');
     
     uploadFile.click(function(event){
         
@@ -39,7 +43,7 @@ jQuery(function($){
         imgContainer.html( '<img src="' + attachment.url + '" alt="" style="max-width:100%;"/>' );
 
         // Send the attachment id to our hidden input
-        imgId.val( attachment.id );
+        imgUrl.val( attachment.url );
 
         // Hide the add image link
         uploadFile.addClass( 'hidden' );
@@ -51,12 +55,22 @@ jQuery(function($){
   });
 
 
+    uploadVideo.click(function(event){
+       
+       event.preventDefault();
+        
+        videoUrl.val(videoInput.val());
+        
+        videoFrame.html('<embed src="' + videoInput.val() + '" />');
+        
+    });
+
     deleteFile.click(function(event){
         event.preventDefault();
         
         imgContainer.html("");
         
-        imgId.val("");
+        imgUrl.val("");
         
         deleteFile.addClass('hidden');
         

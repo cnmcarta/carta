@@ -342,6 +342,7 @@ var mapstyle = [
                 scrollwheel: false,
                 mapTypeId: 'terrain',
                 scaleControl: true,
+                fullscreenControl: false,
 	    	    styles: newmapstyle
             });
         console.log('after map init');
@@ -367,9 +368,11 @@ var mapstyle = [
                     $("#modal-title").html(this.content.englishName);
                     
                     /*To add in some case statements to change the content between spanish and english */ 
-                    $("#modal-body-location").html("Latitude: " + this.content.location.lat + ", " + "Longitude: " + this.content.location.long);
+                    $("#modal-body-location").html("Latitude: " + this.content.location.lat + ", <br>" + "Longitude: " + this.content.location.long);
                     $("#modal-body-eng").html("English Description: " + this.content.englishDescr);
                     $("#modal-body-spn").html("Spanish Description: " + this.content.spanishDescr);
+                    $("#modal-body-vid").html('<embed id="modal-video" src="' + this.content.videoUrl + '"/>');
+                    $("#modal-body-img").html('<img id="modal-img" src="' + this.content.imageUrl + '"/>');
                     $("#map-info-modal").modal("show");
 		  
                 });
@@ -432,9 +435,11 @@ var mapstyle = [
                             </div>
                             <div class="col-md-4">
                                 <h4>Videos</h4>
+                                <div id = "modal-body-vid"class = "embed-responsive embed-responsive-16by9"></div>
                             </div>
                             <div class="col-md-4">
                                 <h4>Pictures</h4>
+                                <div id = "modal-body-img"></div>
                             </div>
                         </div>
                     </div>

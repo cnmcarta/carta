@@ -39,54 +39,14 @@ h2 {
 
 #map {
     height: 800px;
-    width: 500px;
+    width: 80%;
     overflow: hidden;
     border: 10px solid #8e2f11;
+    margin-left:10%;
+    margin-right:10%;
 }
 
-/*
-#carta-map-capture {
-    background-color: #000000;
-/*
-    height: 50%;
-    width: 40%;
-    height: 560px;
-    width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-    border: 10px solid #8e2f11;
-    /*border-radius: 10px;
-    box-shadow: 10px 10px 20px 0px #000000;
-    background-size: cover;
-    background-image: url('/wp-content/uploads/2015/11/2015-06-13-13.43.28-2.jpg');
-}
-#carta-map-capture-box {
-    height: 100%;
-    width: 100%;
-    background-color: rgba( 0, 0, 0, 0.6 );
-    margin-top: 0;
-    padding: 20px;
-    font-family: Georgia;
-    font-weight: bold;
-}
 
-#carta-map-capture-box h1 {
-    margin-top: 0;
+.page-introduce-title {
+    display:none;
 }
-
-#carta-map-capture-box h1, p {
-    color: white;
-    text-align: center;
-    max-width: 440px;
-}
-
-#carta-map-capture-box div div {
-	color: #000;
-	text-align: center;
-	height: 175px;
-	background-color: #fff;
-	margin-top: -30px;
-}
-*/
-
