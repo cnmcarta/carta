@@ -50,7 +50,7 @@ class Carta_Map_Json_Generator {
         $jsonFile .='
             ]
         }';
-        file_put_contents(plugin_dir_path(__FILE__) . '../assets/carta-map-markers.json', $jsonFile);
+        file_put_contents(plugin_dir_path(__FILE__) . '../public/assets/carta-map-markers.json', $jsonFile);
         
          
     }

@@ -28,6 +28,10 @@ fieldset.inner {
 	margin: 3px;
 }
 
+.uploaded-image{
+  margin: 5%;
+}
+
 .embed-responsive {
   position: relative;
   display: block;

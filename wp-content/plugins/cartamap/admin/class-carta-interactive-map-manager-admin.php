@@ -107,6 +107,12 @@ class Carta_Interactive_Map_Manager_Admin {
 		require_once plugin_dir_path( __FILE__ ) . 'partials/carta-placemark-media-meta-options.php';
 	}
 	
+	function carta_get_image_id($image_url) {
+		global $wpdb;
+		$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+	        return $attachment[0]; 
+	}
+	
 	public function save_carta_placemark_meta_fields() {
 		global $post;
 		//require 'validate.php';
