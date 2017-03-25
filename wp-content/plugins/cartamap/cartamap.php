@@ -10,7 +10,7 @@
  * Author:            CNM Capstone students: Spring 2017
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: 	  carta-locale
+ * Text Domain:       carta-locale
  * Domain Path:       /languages
  */
  // Domain path is used to internationalize the plugin

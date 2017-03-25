@@ -10,6 +10,62 @@
     <script>
     var map;
     var src = 'http://carta.korwest.com/wp-content/plugins/cartamap/assets/cartamap.kml?cachebust='+(new Date()).getTime();
+    
+    var cameraMarker = {
+        path: 'M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z',
+        fillColor: '#dd4b39',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+    };
+    
+    
+    var infoMarker = {
+        path: 'M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z',
+        fillColor: '#dd4b39',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+    };
+
+    var videoMarker = {
+        path: 'M1792 352v1088q0 42-39 59-13 5-25 5-27 0-45-19l-403-403v166q0 119-84.5 203.5t-203.5 84.5h-704q-119 0-203.5-84.5t-84.5-203.5v-704q0-119 84.5-203.5t203.5-84.5h704q119 0 203.5 84.5t84.5 203.5v165l403-402q18-19 45-19 12 0 25 5 39 17 39 59z',
+        fillColor: '#dd4b39',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+    };
+
+    var cameragray = {
+        path: 'M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z',
+        fillColor: 'grey',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+      };
+
+    var infogray = {
+        path: 'M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z',
+        fillColor: 'grey',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+    };
+
+    var videogray = {
+        path: 'M1792 352v1088q0 42-39 59-13 5-25 5-27 0-45-19l-403-403v166q0 119-84.5 203.5t-203.5 84.5h-704q-119 0-203.5-84.5t-84.5-203.5v-704q0-119 84.5-203.5t203.5-84.5h704q119 0 203.5 84.5t84.5 203.5v165l403-402q18-19 45-19 12 0 25 5 39 17 39 59z',
+        fillColor: 'grey',
+        fillOpacity: 1,
+        scale: 0.015,
+        strokeColor: 'white',
+        strokeWeight: 1.5
+    };
+    
 	var newmapstyle =[
     {
         "featureType": "all",
@@ -328,7 +384,7 @@ var mapstyle = [
        
         var mapMarkers = [];
         
-        $.getJSON( "<?php echo plugin_dir_url( dirname( __FILE__ ) ) . '../' ?>/assets/carta-map-markers.json", function(markers){
+        $.getJSON( "<?php echo plugin_dir_url( dirname( __FILE__ ) ) ?>/assets/carta-map-markers.json", function(markers){
                 
             mapMarkers = markers.markers;
             
@@ -345,34 +401,77 @@ var mapstyle = [
                 fullscreenControl: false,
 	    	    styles: newmapstyle
             });
-        console.log('after map init');
 
             
             for (var i = 0; i < mapMarkers.length; i++) {
                 
                 var markerLatLng = new google.maps.LatLng(mapMarkers[i].location.lat, mapMarkers[i].location.long);
-                console.log('inside forloop');
+                
+                var icon = infoMarker;
+                
+                var iconGray = infogray;
+                
+                if(mapMarkers[i].imageUrl != ""){
+                    icon = cameraMarker;
+                    
+                    iconGray = cameragray;
+                }
+                if(mapMarkers[i].videoUrl != ""){
+                    icon = videoMarker;
+                    
+                    iconGray = videogray;
+                }
                 
                 var setMarker = new google.maps.Marker({
                     position: markerLatLng,
                     map: map,
                     title: mapMarkers[i].name,
-                    //correct modal info needs to go here : Eduardo
+                    icon: icon,
+                    iconGray: iconGray,
                     content:    mapMarkers[i]
                 });
                 
                 google.maps.event.addListener(setMarker, "click", function(event){
-
-                    //I have no idea what "this" is but it's what you need to select to get the info
+                    
+                    this.setIcon(this.iconGray);
                     
                     $("#modal-title").html(this.content.englishName);
                     
                     /*To add in some case statements to change the content between spanish and english */ 
-                    $("#modal-body-location").html("Latitude: " + this.content.location.lat + ", <br>" + "Longitude: " + this.content.location.long);
-                    $("#modal-body-eng").html("English Description: " + this.content.englishDescr);
-                    $("#modal-body-spn").html("Spanish Description: " + this.content.spanishDescr);
-                    $("#modal-body-vid").html('<embed id="modal-video" src="' + this.content.videoUrl + '"/>');
-                    $("#modal-body-img").html('<img id="modal-img" src="' + this.content.imageUrl + '"/>');
+                    //$("#modal-body-location").html("Latitude: " + this.content.location.lat + ", <br>" + "Longitude: " + this.content.location.long);
+                    $("#modal-body-eng").html( this.content.englishDescr);
+                    $("#modal-body-spn").html( this.content.spanishDescr);
+                    
+                    // prepare divs for hiding/showing based on content present.
+                    // if there is no video, or no image, then we hide the div that houses them.
+                    $("#modal-body-vid").html("");
+                    $("#video-modal").addClass("carta-modal-nodisplay");
+                    $("#modal-body-img").html("");
+                    $("#image-modal").addClass("carta-modal-nodisplay");
+                    
+                    var videoBool = false; // false means content is not present. True means content is present. 
+                    var imageBool = false; // false means content is not present. True means content is present.
+                    
+                     // check for content. If there is content, add content to div and remove class that hides the div.
+                     if (this.content.videoUrl != "") {
+                         $("#video-modal").removeClass("carta-modal-nodisplay");
+                         $("#modal-body-vid").html('<embed id="modal-video" src="' + this.content.videoUrl + '"/>');
+                         videoBool = true;
+                         
+                     }
+                     if (this.content.imageUrl != "") {
+                         $("#image-modal").removeClass("carta-modal-nodisplay");
+                         $("#modal-body-img").html('<img id="modal-img" style="width:100%;" src="' + this.content.imageUrl + '"/>');
+                         imageBool = true;
+                     }
+                     
+                     $("#text-modal").addClass("col-md-4");
+                     
+                     if (videoBool == false && imageBool == false) {
+                         $("#text-modal").removeClass("col-md-4");
+                         $("#text-modal").addClass("col-md-6");
+                     }
+                   
                     $("#map-info-modal").modal("show");
 		  
                 });
@@ -383,6 +482,10 @@ var mapstyle = [
                 
             loadKmlLayer(src, map);
         }
+        
+    $("#video-modal").on('hidden.bs.modal', function (e) {
+        $("#video-modal iframe").attr("src", $("#video-modal embed").attr("src"));
+    });
 
     /**
     * Adds a KMLLayer based on the URL passed. Clicking on a marker
@@ -405,8 +508,10 @@ var mapstyle = [
 
     
 
-        <h1 class = "interactivemap">The Royal Road of the Interior Lands</h1>
+        <h1 class = "interactivemap"><?php _e('The Royal Road of the Interior Lands', 'cartamap'); ?></h1>
         <div id="map"></div>
+     
+ 
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClIID75_mjy20fupwSmSdhWVWJqOJ7itg&callback=initMap">
         </script>
@@ -421,24 +526,37 @@ var mapstyle = [
                 <div class="modal-content">
                     
                     <div class="modal-header">
-                        <h1 class="modal-title" id="modal-title">Modal Header</h1>
-                        <p id="modal-body-location">Some text in the modal.</p>
+                        <h1 class="modal-title" id="modal-title"><?php _e('Modal Header', 'cartamap'); ?></h1>
+                          <div>
+                            <label class="switch">
+                              <input type="checkbox">
+                              <div class="slider round"></div> 
+                            </label>
+                        </div>
+                                <script>
+                                $( "input" ).click(function() {
+                                    $( "p" ).toggle();
+                                    
+                                });
+            </script>
+                        
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-4">
-                                <h4>Info</h4>
+                            <div><?php echo wp_get_attachment_image( $this->ID, 'thumbnail' ); ?></div>
+                            <div class="col-md-4" id="text-modal">
+                                <h4><?php _e('Info', 'cartamap'); ?></h4>
                                 <p id ="modal-body-eng"></p>
-                                <p id ="modal-body-spn"></p>
+                                <p style="display: none" id ="modal-body-spn"></p>
                             </div>
-                            <div class="col-md-4">
-                                <h4>Videos</h4>
+                            <div class="col-md-4  carta-modal-nodisplay carta-video-div" id="video-modal">
+                                <h4><?php _e('Videos', 'cartamap'); ?></h4>
                                 <div id = "modal-body-vid"class = "embed-responsive embed-responsive-16by9"></div>
                             </div>
-                            <div class="col-md-4">
-                                <h4>Pictures</h4>
+                            <div class="col-md-4 carta-modal-nodisplay" id="image-modal">
+                                <h4><?php _e('Pictures', 'cartamap'); ?></h4>
                                 <div id = "modal-body-img"></div>
                             </div>
                         </div>

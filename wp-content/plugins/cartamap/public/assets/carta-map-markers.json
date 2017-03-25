@@ -1,0 +1,149 @@
+{
+            "markers": [
+            
+                {
+                    "ID" : "148",
+                    "category" : "",
+                    "englishName" : "Albuquerque",
+                    "spanishName" : "Albuquerque",
+                    "englishDescr" : "Albuquerque, New Mexico’s largest city, sits in the high desert. Its modern Downtown core contrasts with Old Town Albuquerque, dating to the city’s 1706 founding as a Spanish colony. Old Town is filled with historic adobe buildings, such as San Felipe de Neri Church, 5 museums, and shops selling Native American handicrafts. Nearby, The Indian Pueblo Cultural Center traces the area’s tribal history.",
+                    "spanishDescr" : "",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "35.0820877",
+                        "long" : "-106.9566669"
+                    },
+                    "imageUrl" : "https://cnmcartaproject-stephengralton.c9users.io/wp-content/uploads/2017/03/DonaAna.jpg",
+                    "videoUrl" : "https://www.youtube.com/embed/cWNhMk7bwjM"
+                },
+                {
+                    "ID" : "145",
+                    "category" : "",
+                    "englishName" : "JORNADA DEL MUERTO SOUTH REGION",
+                    "spanishName" : "JORNADA DEL MUERTO SOUTH REGION",
+                    "englishDescr" : "The southern portion of the Jornada del Muerto. Northbound caravans would assemble at Paraje de San Diego on the Rio Grande, generally waiting for the full moon for night travel to expedite their trip through the Jornada. The San Diego crossing and paraje was considered the southern entrance to the Jornada del Muerto. Entering the Jornada, there was little reliable water for the next 90 miles. Springs at Paraje del Perrillo and Aleman provided some water, but seldom enough for the entire caravan.  Much of the Jornada del Muerto is along an open, flat basin with few landmarks.  Trail guides were essential for keeping the wagon caravans on the trail and scouting ahead for possible water, hazards, or washed out trails where an alternate path was blazed. The Jornada was one of the most dreaded sections of the trail.",
+                    "spanishDescr" : "La parte sur de la Jornada del Muerto. Las caravanas del norte se reunirían en Paraje de San Diego en el Río Grande, generalmente esperando la luna llena para el viaje de la noche para agilizar su viaje a través del Jornada. El cruce de San Diego y paraje fue considerado la entrada sur de la Jornada del Muerto. Al entrar en la Jornada, había poca agua confiable para las próximas 90 millas. Los manantiales del Paraje del Perrillo y de Alemán proporcionaban agua, pero rara vez era suficiente para toda la caravana. Gran parte de la Jornada del Muerto está a lo largo de una cuenca plana y abierta con pocos puntos de referencia. Las guías de senderos eran esenciales para mantener las caravanas de los vagones en el sendero y explorar en busca de posibles peligros de agua, o los senderos lavados donde un camino alternativo fue ardiendo. La Jornada era una de las secciones más temidas del sendero.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "33.5344215",
+                        "long" : "-106.8689307"
+                    },
+                    "imageUrl" : "https://cnmcartaproject-stephengralton.c9users.io/wp-content/uploads/2017/03/squaretest.jpg",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "143",
+                    "category" : "",
+                    "englishName" : "DOÑA ANA REGION",
+                    "spanishName" : "DOÑA ANA REGION",
+                    "englishDescr" : "Crossing the Rio Grande at El Paso, Mesilla and Doña Ana were the last towns northbound caravans would see for many days on the trail. Old town Doña Ana remains an authenic village today of a typical El Camino Real village.",
+                    "spanishDescr" : "Cruzando el Río Grande en El Paso, Mesilla y Doña Ana fueron las últimas ciudades que las caravanas en dirección norte verían por muchos días en el camino. La ciudad vieja de Doña Ana sigue siendo un pueblo auténtico hoy de un pueblo típico de El Camino Real.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "32.416731",
+                        "long" : "-107.3805279"
+                    },
+                    "imageUrl" : "https://cnmcartaproject-stephengralton.c9users.io/wp-content/uploads/2017/03/widepicturetest.jpg",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "139",
+                    "category" : "",
+                    "englishName" : "LA JOYA/SEVILLETA REGION",
+                    "spanishName" : "LA JOYA/SEVILLETA REGION",
+                    "englishDescr" : "Northern portion of the Piro nation. The Tzelaqui pueblo was renamed &#039;Sevilleta&#039; by Oñate in 1598, which became a Franciscan mission pueblo 1620s; abandoned in 1680 Pueblo Revolt. Caravans would assemble at La Joya for the southbound journey. Sevilleta and La Joya are two well documented areas and parajes along El Camino Real in this region.",
+                    "spanishDescr" : "Norte de la nación Piro. El pueblo de Tzelaquí fue rebautizado como &#039;Sevillata&#039; por Oñate en 1598, que se convirtió en una misión franciscana pueblo de 1620; Abandonado en 1680 Pueblo Revuelta. Las caravanas se reunían en La Joya para el viaje hacia el sur. Sevilleta y La Joya son dos áreas bien documentadas y parajes a lo largo de El Camino Real en esta región.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "34.3416851",
+                        "long" : "-106.9754752"
+                    },
+                    "imageUrl" : "https://cnmcartaproject-stephengralton.c9users.io/wp-content/uploads/2017/03/widepicturetest.jpg",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "137",
+                    "category" : "",
+                    "englishName" : "SOCORRO NORTH REGION",
+                    "spanishName" : "SOCORRO NORTH REGION",
+                    "englishDescr" : "1600s- The trail passed through the Piro Alamillo mission pueblo abandoned during the 1680 Pueblo Revolt. Early 1800s - Many town developed along the trail, most now abandoned. Parida Hill was a trail landmark for the difficult, all day job getting the wagons over the hill.",
+                    "spanishDescr" : "1600s- El rastro pasó a través del pueblo de la misión de Piro Alamillo abandonado durante la rebelión del pueblo 1680. Principios de 1800 - Muchos pueblos se desarrollaron a lo largo del camino, la mayoría ahora abandonados. La colina de Parida era una señal del rastro para el trabajo difícil, todo el día que consigue los carros sobre la colina.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "34.0604467",
+                        "long" : "-106.9724453"
+                    },
+                    "imageUrl" : "",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "135",
+                    "category" : "",
+                    "englishName" : "SOCORRO SOUTH REGION",
+                    "spanishName" : "SOCORRO SOUTH REGION",
+                    "englishDescr" : "1600s – Piro pueblos along the trail including Pilabo (today&#039;s Socorro), the principal mission pueblo of the province. Many towns developed along the trail in the early 1800s, many are today&#039;s towns, others died with the trail.",
+                    "spanishDescr" : "1600s - Piro pueblos a lo largo del sendero, incluyendo Pilabo (hoy Socorro), la principal misión pueblo de la provincia. Muchos pueblos se desarrollaron a lo largo del sendero a principios de 1800, muchos son los pueblos de hoy, otros murieron con el rastro.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "34.0604616",
+                        "long" : "-106.9374245"
+                    },
+                    "imageUrl" : "",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "133",
+                    "category" : "",
+                    "englishName" : "MESA DE CONTADERO/VALVERDE",
+                    "spanishName" : "MESA DE CONTADERO/VALVERDE",
+                    "englishDescr" : "The northern extreme of the Jornada del Muerto. The trail passed through several Piro pueblos, with the Senecú mission pueblo the southern most pueblo (until 1680). Several popular paraje&#039;s along the river for water and grazing. Mesa del Contadero was the &#039;counting place&#039; – a trail landmark.",
+                    "spanishDescr" : "El extremo norte de la Jornada del Muerto. El sendero pasó por varios pueblos del Piro, con el pueblo de la misión Senecú el pueblo más austral (hasta 1680). Varios paraje populares a lo largo del río para el agua y el pastoreo. Mesa del Contadero fue el &#039;lugar de la cuenta&#039;- un hito del sendero.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "33.6667337",
+                        "long" : "-106.9861025"
+                    },
+                    "imageUrl" : "",
+                    "videoUrl" : ""
+                },
+                {
+                    "ID" : "131",
+                    "category" : "",
+                    "englishName" : "PARAJE CRISTOBAL REGION",
+                    "spanishName" : "PARAJE CRISTOBAL REGION",
+                    "englishDescr" : "The northern portion of the Jornada del Muerto (Journey of Death).  Paraje Fra Cristobal was a major trail landmark, the first water in the 90-mile waterless trek through the Jornada.",
+                    "spanishDescr" : "La parte norte de la Jornada del Muerto. Paraje Fra Cristobal fue un hito importante, el primer agua en la caminata de 90 millas sin agua a través de la Jornada.",
+                    "location" :{
+                        "address" : "",
+                        "state" : "",
+                        "city" : "",
+                        "zipcode" : "",
+                        "lat" : "35.050881",
+                        "long" : "-107.5427151"
+                    },
+                    "imageUrl" : "",
+                    "videoUrl" : ""
+                }
+            ]
+        }
