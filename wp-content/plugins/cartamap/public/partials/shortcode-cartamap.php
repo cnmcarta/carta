@@ -527,29 +527,32 @@ var mapstyle = [
                     
                     <div class="modal-header">
                         <h1 class="modal-title" id="modal-title"><?php _e('Modal Header', 'cartamap'); ?></h1>
-                          <div>
-                            <label class="switch">
-                              <input type="checkbox">
-                              <div class="slider round"></div> 
+                          <div class="modal-lang-switch">
+                            
+                            <label class="carta_switch">
+                              <input class="carta_checkbox" type="checkbox">
+                              <div class="carta_slider carta_round"></div> 
                             </label>
+                            <span style="display:none" class="carta_lang_toggle active">English</span>
+                            <span class="carta_lang_toggle active">Spanish</span>
+                            
+                            
                         </div>
                                 <script>
-                                $( "input" ).click(function() {
-                                    $( "p" ).toggle();
-                                    
+                                $( ".carta_checkbox" ).click(function() {
+                                    $( ".carta_lang_toggle" ).toggle();
                                 });
-            </script>
+                                </script>
                         
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     
                     <div class="modal-body">
                         <div class="row">
-                            <div><?php echo wp_get_attachment_image( $this->ID, 'thumbnail' ); ?></div>
                             <div class="col-md-4" id="text-modal">
                                 <h4><?php _e('Info', 'cartamap'); ?></h4>
-                                <p id ="modal-body-eng"></p>
-                                <p style="display: none" id ="modal-body-spn"></p>
+                                <p class="carta_lang_toggle" id ="modal-body-eng"></p>
+                                <p class="carta_lang_toggle" style="display: none" id ="modal-body-spn"></p>
                             </div>
                             <div class="col-md-4  carta-modal-nodisplay carta-video-div" id="video-modal">
                                 <h4><?php _e('Videos', 'cartamap'); ?></h4>
