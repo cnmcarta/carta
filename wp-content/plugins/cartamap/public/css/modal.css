@@ -49,15 +49,18 @@ h1 {
 .close {
     position: absolute;
     font-size: 75px;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
-    top: 15px;
-    right: 15px;
+    top: 2px;
+    right: 2px;
     cursor: pointer;
 }
 .modal-title {
     color: #8e2f11;
+}
+.modal-lang-switch {
+    
 }
 
 .modal-backdrop.in {
@@ -147,18 +150,11 @@ h1 {
 
 }
 
- @media screen and (orientation:landscape) {
-     .modal-footer {
-         display: none;
-     }
-     .modal-header {
-         max-height: 100px;
-     }
- }
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 1em;
     }
     .carta-mini-logo{
         display: block;
@@ -171,6 +167,43 @@ h1 {
     }
 }
 
+
+@media (max-width : 680px) and (orientation:landscape) {
+     h1 {
+        font-size: 1.5em;
+    }
+    .carta-mini-logo{
+        display: block;
+    }
+    .carta-logo{
+        display: none;
+    }
+    .modal-footer{
+        max-height: 65px;
+    }
+    .modal-footer {
+         display: none;
+    }
+     .modal-header {
+        padding-top: 6px;
+        padding-left: 15px;
+        padding-bottom: 1px;
+        border-bottom: 3px solid #e5e5e5;
+        background-color: #cddce5;
+    }
+    .modal-dialog {
+        position: absolute;
+        top: 50% !important;
+        transform: translate(0, -50%) !important;
+        -ms-transform: translate(0, -50%) !important;
+        -webkit-transform: translate(0, -50%) !important;
+        margin: auto 5%;
+        width: 90%;
+        height: 95%;
+    }
+}
+
+
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
     h1 {
@@ -181,4 +214,78 @@ h1 {
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
+}
+
+/*
+################################
+#
+# CSS for the slider button that swaps English for Spanish in the model.
+*/
+
+/* The switch - the box around the slider */
+.carta_switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 19px;
+  margin-bottom: -2px;
+}
+
+/* Hide default HTML checkbox */
+.carta_switch input {display:none;}
+
+/* The slider */
+.carta_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: #8e1010;*/
+  background-color: #ae2626;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.carta_slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .carta_slider {
+  background-color: #5a1703;
+}
+
+input:focus + .carta_slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .carta_slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.carta_slider.carta_round {
+  border-radius: 34px;
+}
+
+.carta_slider.carta_round:before {
+  border-radius: 50%;
+}
+
+/* Style for Language Title */
+.active {
+    font-size: large;
+    font-weight: bold;
+    color: #108e68;
 }
