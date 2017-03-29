@@ -42,7 +42,7 @@
     var cameragray = {
         path: 'M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z',
         fillColor: 'grey',
-        fillOpacity: 1,
+        fillOpacity: 0.25,
         scale: 0.015,
         strokeColor: 'white',
         strokeWeight: 1.5
@@ -51,7 +51,7 @@
     var infogray = {
         path: 'M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z',
         fillColor: 'grey',
-        fillOpacity: 1,
+        fillOpacity: 0.25,
         scale: 0.015,
         strokeColor: 'white',
         strokeWeight: 1.5
@@ -60,7 +60,7 @@
     var videogray = {
         path: 'M1792 352v1088q0 42-39 59-13 5-25 5-27 0-45-19l-403-403v166q0 119-84.5 203.5t-203.5 84.5h-704q-119 0-203.5-84.5t-84.5-203.5v-704q0-119 84.5-203.5t203.5-84.5h704q119 0 203.5 84.5t84.5 203.5v165l403-402q18-19 45-19 12 0 25 5 39 17 39 59z',
         fillColor: 'grey',
-        fillOpacity: 1,
+        fillOpacity: 0.25,
         scale: 0.015,
         strokeColor: 'white',
         strokeWeight: 1.5
@@ -534,7 +534,7 @@ var mapstyle = [
                               <div class="carta_slider carta_round"></div> 
                             </label>
                             <span style="display:none" class="carta_lang_toggle active">English</span>
-                            <span class="carta_lang_toggle active">Spanish</span>
+                            <span class="carta_lang_toggle active">Espa&ntilde;ol</span>
                             
                             
                         </div>
