@@ -49,6 +49,10 @@ class Carta_Interactive_Map_Manager_Public {
 
 		wp_enqueue_style( 'bootstrap-css' );
 		
+		//wp_register_script( 'jquery2', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js',array( 'jquery' ));
+		//wp_enqueue_script('jquery2');
+		
+		
 		ob_start();
 		
 		wp_enqueue_style('carta_interactive_map_manager_public', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, FALSE);
