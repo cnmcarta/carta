@@ -1,8 +1,6 @@
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-		$('document').ready(function(){
-			$('#captureBox h1,p').delay(1000).animate({left: 0}, 1000);
+		jQuery('document').ready(function(){
+			jQuery('#captureBox h1,p').delay(1000).animate({left: 0}, 1000);
 		});
 </script>
 
@@ -384,7 +382,7 @@ var mapstyle = [
        
         var mapMarkers = [];
         
-        $.getJSON( "<?php echo plugin_dir_url( dirname( __FILE__ ) ) ?>/assets/carta-map-markers.json", function(markers){
+        jQuery.getJSON( "<?php echo plugin_dir_url( dirname( __FILE__ ) ) ?>/assets/carta-map-markers.json", function(markers){
                 
             mapMarkers = markers.markers;
             
@@ -435,44 +433,44 @@ var mapstyle = [
                     
                     this.setIcon(this.iconGray);
                     
-                    $("#modal-title").html(this.content.englishName);
+                    jQuery("#modal-title").html(this.content.englishName);
                     
                     /*To add in some case statements to change the content between spanish and english */ 
-                    //$("#modal-body-location").html("Latitude: " + this.content.location.lat + ", <br>" + "Longitude: " + this.content.location.long);
-                    $("#modal-body-eng").html( this.content.englishDescr);
-                    $("#modal-body-spn").html( this.content.spanishDescr);
+                    //jQuery("#modal-body-location").html("Latitude: " + this.content.location.lat + ", <br>" + "Longitude: " + this.content.location.long);
+                    jQuery("#modal-body-eng").html( this.content.englishDescr);
+                    jQuery("#modal-body-spn").html( this.content.spanishDescr);
                     
                     // prepare divs for hiding/showing based on content present.
                     // if there is no video, or no image, then we hide the div that houses them.
-                    $("#modal-body-vid").html("");
-                    $("#video-modal").addClass("carta-modal-nodisplay");
-                    $("#modal-body-img").html("");
-                    $("#image-modal").addClass("carta-modal-nodisplay");
+                    jQuery("#modal-body-vid").html("");
+                    jQuery("#video-modal").addClass("carta-modal-nodisplay");
+                    jQuery("#modal-body-img").html("");
+                    jQuery("#image-modal").addClass("carta-modal-nodisplay");
                     
                     var videoBool = false; // false means content is not present. True means content is present. 
                     var imageBool = false; // false means content is not present. True means content is present.
                     
                      // check for content. If there is content, add content to div and remove class that hides the div.
                      if (this.content.videoUrl != "") {
-                         $("#video-modal").removeClass("carta-modal-nodisplay");
-                         $("#modal-body-vid").html('<embed id="modal-video" src="' + this.content.videoUrl + '"/>');
+                         jQuery("#video-modal").removeClass("carta-modal-nodisplay");
+                         jQuery("#modal-body-vid").html('<embed id="modal-video" src="' + this.content.videoUrl + '"/>');
                          videoBool = true;
                          
                      }
                      if (this.content.imageUrl != "") {
-                         $("#image-modal").removeClass("carta-modal-nodisplay");
-                         $("#modal-body-img").html('<img id="modal-img" style="width:100%;" src="' + this.content.imageUrl + '"/>');
+                         jQuery("#image-modal").removeClass("carta-modal-nodisplay");
+                         jQuery("#modal-body-img").html('<img id="modal-img" style="width:100%;" src="' + this.content.imageUrl + '"/>');
                          imageBool = true;
                      }
                      
-                     $("#text-modal").addClass("col-md-4");
+                     jQuery("#text-modal").addClass("col-md-4");
                      
                      if (videoBool == false && imageBool == false) {
-                         $("#text-modal").removeClass("col-md-4");
-                         $("#text-modal").addClass("col-md-6");
+                         jQuery("#text-modal").removeClass("col-md-4");
+                         jQuery("#text-modal").addClass("col-md-6");
                      }
                    
-                    $("#map-info-modal").modal("show");
+                    jQuery("#map-info-modal").modal("show");
 		  
                 });
                 
@@ -483,8 +481,8 @@ var mapstyle = [
             loadKmlLayer(src, map);
         }
         
-    $("#video-modal").on('hidden.bs.modal', function (e) {
-        $("#video-modal iframe").attr("src", $("#video-modal embed").attr("src"));
+    jQuery("#video-modal").on('hidden.bs.modal', function (e) {
+        jQuery("#video-modal iframe").attr("src", jQuery("#video-modal embed").attr("src"));
     });
 
     /**
@@ -506,9 +504,6 @@ var mapstyle = [
 
     <!--<div class="bodyinside">-->
 
-    
-
-        <h1 class = "interactivemap"><?php _e('The Royal Road of the Interior Lands', 'cartamap'); ?></h1>
         <div id="map"></div>
      
  
@@ -539,8 +534,8 @@ var mapstyle = [
                             
                         </div>
                                 <script>
-                                $( ".carta_checkbox" ).click(function() {
-                                    $( ".carta_lang_toggle" ).toggle();
+                                jQuery( ".carta_checkbox" ).click(function() {
+                                    jQuery( ".carta_lang_toggle" ).toggle();
                                 });
                                 </script>
                         
