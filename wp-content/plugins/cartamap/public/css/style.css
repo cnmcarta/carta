@@ -39,11 +39,15 @@ h2 {
 
 #map {
     height: 800px;
-    width: 80%;
+    width: 100%;
     overflow: hidden;
-    border: 10px solid #8e2f11;
+    /*border: 10px solid #8e2f11;
     margin-left:10%;
-    margin-right:10%;
+    margin-right:10%;*/
+}
+
+.mk-zindex-fix {
+	display: none;
 }
 
 

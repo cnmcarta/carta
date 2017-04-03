@@ -35,7 +35,7 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0; 
-    border: 5px solid #8e2f11;
+    /*border: 5px solid #8e2f11;*/
 	z-index: 1050;
 	overflow-y: hidden;
 }
@@ -65,7 +65,7 @@ h1 {
 
 .modal-backdrop.in {
     opacity: 0.6 !important;
-    z-index: 1000 !important;
+    z-index: 199 !important;
 }
 .modal-body .row {
     padding-bottom: 250px;
