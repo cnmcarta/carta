@@ -115,17 +115,10 @@ class Carta_Interactive_Map_Manager_Admin {
 	
 	public function save_carta_placemark_meta_fields() {
 		global $post;
-		//require 'validate.php';
-		
+		if(empty($_POST['carta_placemark_description_en'])){$_POST['carta_placemark_description_en'] = 'No content available';}
+		if(empty($_POST['carta_placemark_description_es'])){$_POST['carta_placemark_description_es'] = 'No hay contenido disponible';}
 		$carta_placemark_lat = sanitize_text_field( $_POST['carta_placemark_lat'] );
-		//if (isset($carta_placemark_lat) && is_valid_lat($carta_placemark_lat)){
 			update_post_meta($post->ID, "carta_placemark_lat", $carta_placemark_lat);
-		//	add_action('admin_notices', 'invalid_lat_admin_notice');
-		//}
-		//else{
-		//	add_action('admin_notices', 'invalid_lat_admin_notice');
-		//}
-		
 		$carta_placemark_lng = sanitize_text_field( $_POST['carta_placemark_lng'] );
 		update_post_meta($post->ID, "carta_placemark_lng", $carta_placemark_lng);
 		$carta_placemark_place_name_en = sanitize_text_field( $_POST['carta_placemark_place_name_en'] );
@@ -140,8 +133,6 @@ class Carta_Interactive_Map_Manager_Admin {
 		update_post_meta($post->ID, "carta_placemark_image", $carta_placemark_image);
 		$carta_placemark_video = esc_url_raw( $_POST['carta_placemark_video'] );
 		update_post_meta($post->ID, "carta_placemark_video", $carta_placemark_video);
-		
-
 			// it's an existing record
 			//Write the save data to the json file
 			$this->carta_map_json->createjsonfile('carta_placemark');
